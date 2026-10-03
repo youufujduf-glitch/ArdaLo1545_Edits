@@ -1,105 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ArdaLo1545_Edits | Minecraft</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Code-Man Mağaza</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#101410;color:#fff;min-height:100vh}
-header{background:#171c17;border-bottom:3px solid #4caf50;position:sticky;top:0;z-index:5}
-.nav{max-width:1100px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:24px;font-weight:900;color:#62d96b;text-shadow:2px 2px #000}
-nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold}
-nav a:hover{color:#62d96b}
-.hero{min-height:440px;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 20px;background:linear-gradient(rgba(10,20,10,.72),rgba(10,15,10,.92)),linear-gradient(135deg,#244b28,#101410)}
-.hero h1{font-size:clamp(38px,8vw,76px);text-shadow:4px 4px #000;margin-bottom:15px}
-.hero h1 span{color:#62d96b}
-.hero p{color:#d5ddd5;font-size:18px;max-width:650px;margin:auto;line-height:1.6}
-.btn{display:inline-block;margin-top:25px;padding:13px 22px;background:#4caf50;color:white;text-decoration:none;font-weight:900;border-radius:8px;box-shadow:0 4px 0 #28632b}
-section{max-width:1100px;margin:auto;padding:55px 20px}
-h2{font-size:32px;margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:#1b211b;border:1px solid #354335;border-radius:12px;padding:24px;transition:.2s}
-.card:hover{transform:translateY(-5px);border-color:#62d96b}
-.icon{font-size:45px;margin-bottom:15px}
-.card h3{margin-bottom:9px;color:#62d96b}
-.card p{color:#b9c2b9;line-height:1.5}
-.info{background:#171c17;border:1px solid #354335;border-radius:12px;padding:25px}
-.info-row{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid #303930;flex-wrap:wrap}
-.info-row:last-child{border-bottom:0}
-.label{color:#8fe495;font-weight:bold}
-.value{color:#fff;font-family:monospace;text-align:right;word-break:break-word}
-.about{background:#171c17;border-radius:12px;padding:25px;line-height:1.7;color:#cbd2cb;border-left:4px solid #4caf50}
-footer{text-align:center;padding:30px;color:#879187;border-top:1px solid #2c352c}
-@media(max-width:650px){nav a{display:none}.info-row{display:block}.value{text-align:left;margin-top:6px}}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111936;background:#fff}
+a{text-decoration:none;color:inherit}.top{height:62px;background:#f8f8ff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.nav{height:86px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:white}
+.nav button{border:0;background:none;font-size:29px;cursor:pointer}.logo{font-size:25px;font-weight:900;color:#2256d8}.logo small{color:#151b3e}
+.hero{max-width:1400px;margin:auto;height:405px;position:relative;overflow:hidden;background:linear-gradient(110deg,#fff 0%,#eef3ff 48%,#d9e8ff 100%);display:flex;align-items:center}
+.heroText{z-index:2;padding-left:8%;max-width:520px}.heroText h1{font-size:58px;line-height:.98;margin:0 0 15px;color:#101a3d}.heroText p{font-size:20px;margin:0 0 25px;color:#555}
+.heroBtn{background:#2458d9;color:#fff;border:0;border-radius:35px;padding:20px 42px;font-size:20px;cursor:pointer}
+.heroVisual{position:absolute;right:4%;bottom:-30px;width:470px;height:390px;border-radius:35% 35% 0 0;background:linear-gradient(135deg,#1e55d7,#7034d8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:54px;font-weight:900;transform:rotate(-2deg)}
+.ribbon{height:58px;background:linear-gradient(90deg,#2058d9,#7134d9);color:white;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;white-space:nowrap;overflow:hidden}
+.ribbon span{margin:0 35px}.notice{height:58px;background:#131c4b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
+.section{max-width:1250px;margin:65px auto;padding:0 25px}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.head h2{font-size:42px;margin:0}.head a{font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.card{min-width:0}.pic{height:280px;background:#f4f5f8;border-radius:28px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.shirt{width:75%;height:72%;background:#111;border-radius:10px 10px 25px 25px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:27px;font-weight:900;position:relative}.shirt:before,.shirt:after{content:"";position:absolute;top:0;width:35px;height:85px;background:#111}.shirt:before{left:-29px;transform:rotate(25deg)}.shirt:after{right:-29px;transform:rotate(-25deg)}.hoodie{width:76%;height:75%;background:#253b79;border-radius:22px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900}.plush{width:170px;height:170px;border-radius:45%;background:#e9b74e;display:flex;align-items:center;justify-content:center;font-size:55px}.cards{width:80%;height:65%;background:#e7efff;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:40px;color:#2256d8;font-weight:900}.card h3{font-size:20px;margin:18px 2px 8px}.price{color:#2458d9;font-weight:900;font-size:22px}.old{color:#777;text-decoration:line-through;font-size:16px;margin-left:6px;font-weight:500}
+.collection{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.col{height:270px;border-radius:28px;padding:28px;color:#fff;display:flex;align-items:flex-end;font-size:30px;font-weight:900;position:relative;overflow:hidden}.col:nth-child(1){background:linear-gradient(135deg,#f6f6f6,#dbe7ff);color:#111936}.col:nth-child(2){background:linear-gradient(135deg,#2258d9,#7236d8)}.col:nth-child(3){background:linear-gradient(135deg,#f1c34f,#d4861b);color:#3a2800}
+.footer{margin-top:70px;background:#111936;color:#fff;text-align:center;padding:45px 20px}.footer p{opacity:.75}
+.cart{position:fixed;right:-420px;top:0;width:min(400px,92vw);height:100vh;background:#fff;z-index:10;transition:.3s;box-shadow:-10px 0 30px #0002;padding:25px;display:flex;flex-direction:column}.cart.open{right:0}.cartHead{display:flex;justify-content:space-between;align-items:center}.cartHead button{border:0;background:none;font-size:30px}.items{flex:1;overflow:auto}.item{padding:15px 0;border-bottom:1px solid #eee}.total{font-size:22px;font-weight:900;display:flex;justify-content:space-between;padding:20px 0}.checkout{background:#2458d9;color:white;border:0;border-radius:14px;padding:15px;font-weight:900}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.heroVisual{width:330px;height:290px;opacity:.35}.heroText{padding-left:6%}.collection{grid-template-columns:1fr}.pic{height:230px}}
+@media(max-width:600px){.top{height:48px;font-size:14px}.nav{height:68px;padding:0 16px}.logo{font-size:21px}.hero{height:360px}.heroText{text-align:center;padding:0 22px;margin:auto}.heroText h1{font-size:42px}.heroText p{font-size:16px}.heroVisual{right:-60px;width:300px;height:270px}.ribbon,.notice{font-size:13px}.section{margin:42px auto;padding:0 16px}.head h2{font-size:29px}.head a{font-size:15px}.grid{gap:12px}.pic{height:185px;border-radius:20px}.card h3{font-size:15px}.price{font-size:18px}.collection{gap:14px}.col{height:180px;font-size:23px}}
 </style>
 </head>
 <body>
-
-<header>
+<div class="top">1.000 TL ve üzeri siparişlerde kargo bedava</div>
 <div class="nav">
-<div class="logo">⛏️ ArdaLo1545_Edits</div>
-<nav>
-<a href="#anasayfa">Ana Sayfa</a>
-<a href="#minecraft">Minecraft</a>
-<a href="#dunya">Dünya Bilgileri</a><a href="#giant">Giant Ales</a>
-<a href="#hakkinda">Hakkında</a>
-</nav>
+<button>☰</button><div class="logo">CODE-MAN <small>STORE</small></div>
+<button onclick="toggleCart()">🛒 <sup id="count">0</sup></button>
 </div>
-</header>
 
-<main>
-<section class="hero" id="anasayfa">
-<div>
-<h1>ArdaLo<span>1545_Edits</span></h1>
-<p>Minecraft dünyasına hoş geldin! Minecraft içerikleri, editler, haritalar ve özel dünya bilgileri burada.</p>
-<a class="btn" href="#dunya">Dünya Bilgilerini Gör</a>
+<section class="hero">
+<div class="heroText"><h1>CODE-MAN'A<br>HOŞ GELDİN!</h1><p>Özel ürünler, eğlenceli koleksiyonlar ve Code-Man tarzı.</p><button class="heroBtn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Alışverişe Başla</button></div>
+<div class="heroVisual">CODE-MAN</div>
+</section>
+<div class="ribbon"><span>☆</span> %100 ORİJİNAL CODE-MAN ÜRÜNLERİ <span>☆</span> YENİ ÜRÜNLER GERİ DÖNDÜ <span>☆</span></div>
+<div class="notice">♡ &nbsp; SELAM! ÜRÜNLERİMİZİ KEŞFET VE SEPETİNE EKLE</div>
+
+<section class="section" id="products">
+<div class="head"><h2>Öne Çıkan Ürünler</h2><a href="#all">Tümünü Gör</a></div>
+<div class="grid" id="featured"></div>
+</section>
+
+<section class="section">
+<div class="head"><h2>Koleksiyonlar</h2></div>
+<div class="collection">
+<div class="col">TİŞÖRTLER<br><small style="font-size:14px;font-weight:500">Tarzını yansıt</small></div>
+<div class="col">KAPŞONLULAR<br><small style="font-size:14px;font-weight:500">Rahatlığını seç</small></div>
+<div class="col">PELŞU OYUNCAKLAR<br><small style="font-size:14px;font-weight:500">Eğlenceyi keşfet</small></div>
 </div>
 </section>
 
-<section id="minecraft">
-<h2>⛏️ Minecraft Bölümü</h2>
-<div class="grid">
-<div class="card"><div class="icon">🎬</div><h3>Editler</h3><p>Minecraft editlerini ve özel videolarını burada sergileyebilirsin.</p></div>
-<div class="card"><div class="icon">🌍</div><h3>Haritalar</h3><p>Özel Minecraft dünyaları ve haritaları için bölüm.</p></div>
-<div class="card"><div class="icon">🧱</div><h3>Yapılar</h3><p>Minecraft yapılarının fotoğraflarını ve bilgilerini ekleyebilirsin.</p></div>
-<div class="card"><div class="icon">🎮</div><h3>Sunucular</h3><p>Favori Minecraft sunucuları hakkında bilgiler paylaşabilirsin.</p></div>
-</div>
+<section class="section" id="all">
+<div class="head"><h2>Tüm Ürünler</h2></div><div class="grid" id="allGrid"></div>
 </section>
 
-<section id="dunya">
-<h2>🌍 Dünya Bilgileri</h2>
-<div class="info">
-<div class="info-row"><span class="label">Seed</span><span class="value">478868574082066804</span></div>
-<div class="info-row"><span class="label">Version</span><span class="value">Java Alpha 1.0.16_02</span></div>
-<div class="info-row"><span class="label">Alpha coordinates</span><span class="value">X=5.06 Y=71 (72.62 eye pos) Z=-298.54</span></div>
-<div class="info-row"><span class="label">Modern coordinates</span><span class="value">X=5.16 Y=71 Z=-298.53</span></div>
-<div class="info-row"><span class="label">Camera angle</span><span class="value">RX=93.75 RY=-1.2</span></div>
-<div class="info-row"><span class="label">World1</span><span class="value"><a href="https://files.mcatho.me/herobrine/World1.zip" target="_blank" rel="noopener" style="color:#62d96b;font-weight:bold">World1.zip</a></span></div>
-</div>
-</section>
+<footer class="footer"><h2>CODE-MAN STORE</h2><p>Demo mağaza • Gerçek ödeme sistemi daha sonra eklenebilir.</p></footer>
 
-<section id="giant">
-<h2>👾 Giant Alex Dünya Dosyası</h2>
-<div class="info">
-<div class="info-row">
-<span class="label">Giant Alex Dünya Dosyası</span>
-<span class="value"><a href="https://www.mediafire.com/file/auylyxbyvugosky/world265344416.rar/file?dkey=xlyjv7cd02k&r=1821" target="_blank" rel="noopener" style="color:#62d96b;font-weight:bold">Dünya Dosyasını Aç</a></span>
-</div>
-</div>
-</section>
+<aside class="cart" id="cart"><div class="cartHead"><h2>Sepetim</h2><button onclick="toggleCart()">×</button></div><div class="items" id="items"></div><div class="total"><span>Toplam</span><span id="total">0 TL</span></div><button class="checkout" onclick="alert('Demo mağaza: ödeme sistemi henüz bağlı değil.')">Ödemeye Geç</button></aside>
 
-<section id="hakkinda">
-<h2>👤 Hakkında</h2>
-<div class="about">
-<strong>ArdaLo1545_Edits</strong>, Minecraft temalı içeriklerin ve editlerin paylaşılabileceği kişisel bir site.
-<br><br>
-Buraya ileride sosyal medya hesaplarını, videolarını, haritalarını ve başka Minecraft içeriklerini ekleyebilirsin.
-</div>
-</section>
-</main>
-
-<footer>© 2026 ArdaLo1545_Edits • Minecraft Fan Sitesi</footer>
+<script>
+const products=[
+["Code-Man Evreni Tişört",639,"shirt","CM"],["Code-Man Kart 10'lu",219,"cards","★"],["Code-Man Kart 50'li",599,"cards","★"],["Code-Man Özel Güç Ekibi",639,"shirt","CM"],["Code-Man Kapşonlu",899,"hoodie","CM"],["Code-Man Peluş",499,"plush","🧸"],["Code-Man Siyah Tişört",639,"shirt","CM"],["Code-Man Mavi Hoodie",899,"hoodie","CM"]];
+let cart=[];
+function make(p,i){return `<div class="card"><div class="pic"><div class="${p[2]}">${p[3]}</div></div><h3>${p[0]}</h3><div class="price">${p[1]}.00 TL</div><button style="margin-top:12px;width:100%;padding:11px;border:0;border-radius:12px;background:#111936;color:white;font-weight:800;cursor:pointer" onclick="add(${i})">Sepete Ekle</button></div>`}
+featured.innerHTML=products.slice(0,4).map((p,i)=>make(p,i)).join("");
+allGrid.innerHTML=products.map((p,i)=>make(p,i)).join("");
+function add(i){let x=cart.find(a=>a.i===i);if(x)x.q++;else cart.push({i,q:1});render();toggleCart(true)}
+function render(){count.textContent=cart.reduce((a,x)=>a+x.q,0);items.innerHTML=cart.length?cart.map(x=>`<div class="item"><b>${products[x.i][0]}</b><br>${products[x.i][1]} TL × ${x.q}</div>`).join(""):"<p>Sepetin boş.</p>";total.textContent=cart.reduce((a,x)=>a+products[x.i][1]*x.q,0).toFixed(2)+" TL"}
+function toggleCart(force){if(force)cartEl.classList.add("open");else cartEl.classList.toggle("open")}
+const cartEl=document.getElementById("cart");render();
+</script>
 </body>
 </html>
