@@ -1,76 +1,96 @@
 <!doctype html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Code-Man Mağaza</title>
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111936;background:#fff}
-a{text-decoration:none;color:inherit}.top{height:62px;background:#f8f8ff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
-.nav{height:86px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:white}
-.nav button{border:0;background:none;font-size:29px;cursor:pointer}.logo{font-size:25px;font-weight:900;color:#2256d8}.logo small{color:#151b3e}
-.hero{max-width:1400px;margin:auto;height:405px;position:relative;overflow:hidden;background:linear-gradient(110deg,#fff 0%,#eef3ff 48%,#d9e8ff 100%);display:flex;align-items:center}
-.heroText{z-index:2;padding-left:8%;max-width:520px}.heroText h1{font-size:58px;line-height:.98;margin:0 0 15px;color:#101a3d}.heroText p{font-size:20px;margin:0 0 25px;color:#555}
-.heroBtn{background:#2458d9;color:#fff;border:0;border-radius:35px;padding:20px 42px;font-size:20px;cursor:pointer}
-.heroVisual{position:absolute;right:4%;bottom:-30px;width:470px;height:390px;border-radius:35% 35% 0 0;background:linear-gradient(135deg,#1e55d7,#7034d8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:54px;font-weight:900;transform:rotate(-2deg)}
-.ribbon{height:58px;background:linear-gradient(90deg,#2058d9,#7134d9);color:white;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;white-space:nowrap;overflow:hidden}
-.ribbon span{margin:0 35px}.notice{height:58px;background:#131c4b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
-.section{max-width:1250px;margin:65px auto;padding:0 25px}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.head h2{font-size:42px;margin:0}.head a{font-size:20px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.card{min-width:0}.pic{height:280px;background:#f4f5f8;border-radius:28px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.shirt{width:75%;height:72%;background:#111;border-radius:10px 10px 25px 25px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:27px;font-weight:900;position:relative}.shirt:before,.shirt:after{content:"";position:absolute;top:0;width:35px;height:85px;background:#111}.shirt:before{left:-29px;transform:rotate(25deg)}.shirt:after{right:-29px;transform:rotate(-25deg)}.hoodie{width:76%;height:75%;background:#253b79;border-radius:22px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900}.plush{width:170px;height:170px;border-radius:45%;background:#e9b74e;display:flex;align-items:center;justify-content:center;font-size:55px}.cards{width:80%;height:65%;background:#e7efff;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:40px;color:#2256d8;font-weight:900}.card h3{font-size:20px;margin:18px 2px 8px}.price{color:#2458d9;font-weight:900;font-size:22px}.old{color:#777;text-decoration:line-through;font-size:16px;margin-left:6px;font-weight:500}
-.collection{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.col{height:270px;border-radius:28px;padding:28px;color:#fff;display:flex;align-items:flex-end;font-size:30px;font-weight:900;position:relative;overflow:hidden}.col:nth-child(1){background:linear-gradient(135deg,#f6f6f6,#dbe7ff);color:#111936}.col:nth-child(2){background:linear-gradient(135deg,#2258d9,#7236d8)}.col:nth-child(3){background:linear-gradient(135deg,#f1c34f,#d4861b);color:#3a2800}
-.footer{margin-top:70px;background:#111936;color:#fff;text-align:center;padding:45px 20px}.footer p{opacity:.75}
-.cart{position:fixed;right:-420px;top:0;width:min(400px,92vw);height:100vh;background:#fff;z-index:10;transition:.3s;box-shadow:-10px 0 30px #0002;padding:25px;display:flex;flex-direction:column}.cart.open{right:0}.cartHead{display:flex;justify-content:space-between;align-items:center}.cartHead button{border:0;background:none;font-size:30px}.items{flex:1;overflow:auto}.item{padding:15px 0;border-bottom:1px solid #eee}.total{font-size:22px;font-weight:900;display:flex;justify-content:space-between;padding:20px 0}.checkout{background:#2458d9;color:white;border:0;border-radius:14px;padding:15px;font-weight:900}
-@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.heroVisual{width:330px;height:290px;opacity:.35}.heroText{padding-left:6%}.collection{grid-template-columns:1fr}.pic{height:230px}}
-@media(max-width:600px){.top{height:48px;font-size:14px}.nav{height:68px;padding:0 16px}.logo{font-size:21px}.hero{height:360px}.heroText{text-align:center;padding:0 22px;margin:auto}.heroText h1{font-size:42px}.heroText p{font-size:16px}.heroVisual{right:-60px;width:300px;height:270px}.ribbon,.notice{font-size:13px}.section{margin:42px auto;padding:0 16px}.head h2{font-size:29px}.head a{font-size:15px}.grid{gap:12px}.pic{height:185px;border-radius:20px}.card h3{font-size:15px}.price{font-size:18px}.collection{gap:14px}.col{height:180px;font-size:23px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code-Man Online Mağaza</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #020711; }
+    body { overflow-x: hidden; font-family: Arial, Helvetica, sans-serif; }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #020711;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      max-width: 1672px;
+      aspect-ratio: 1672 / 941;
+      overflow: hidden;
+      background-image: url('./434.png');
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 0 0 60px rgba(0, 75, 190, .28);
+    }
+
+    /* Görseldeki ana bölümlere denk gelen görünmez tıklanabilir alanlar */
+    .hotspot {
+      position: absolute;
+      display: block;
+      border-radius: 12px;
+      outline: none;
+      transition: background .2s ease, box-shadow .2s ease;
+    }
+    .hotspot:hover,
+    .hotspot:focus-visible {
+      background: rgba(0, 132, 255, .10);
+      box-shadow: inset 0 0 0 2px rgba(0, 145, 255, .55), 0 0 18px rgba(0, 95, 255, .25);
+    }
+
+    .home-link { left: 28%; top: 1%; width: 11%; height: 8%; }
+    .clothing-link { left: 40%; top: 1%; width: 10%; height: 8%; }
+    .hoodie-link { left: 50%; top: 1%; width: 11%; height: 8%; }
+    .toy-link { left: 61%; top: 1%; width: 15%; height: 8%; }
+
+    .category-clothing { left: 6%; top: 57%; width: 27%; height: 25%; }
+    .category-hoodie { left: 34%; top: 57%; width: 28%; height: 25%; }
+    .category-toy { left: 64%; top: 57%; width: 29%; height: 25%; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 700px) {
+      .page { align-items: flex-start; }
+      .hero {
+        min-height: 100vh;
+        aspect-ratio: auto;
+        background-size: auto 100vh;
+        background-position: center top;
+      }
+      .hotspot { border-radius: 8px; }
+    }
+  </style>
 </head>
 <body>
-<div class="top">1.000 TL ve üzeri siparişlerde kargo bedava</div>
-<div class="nav">
-<button>☰</button><div class="logo">CODE-MAN <small>STORE</small></div>
-<button onclick="toggleCart()">🛒 <sup id="count">0</sup></button>
-</div>
+  <main class="page">
+    <section class="hero" aria-label="Code-Man Online Mağaza">
+      <a class="hotspot home-link" href="#" aria-label="Ana Sayfa"><span class="sr-only">Ana Sayfa</span></a>
+      <a class="hotspot clothing-link" href="#kıyafet" aria-label="Kıyafet"><span class="sr-only">Kıyafet</span></a>
+      <a class="hotspot hoodie-link" href="#kapsonlu" aria-label="Kapşonlu"><span class="sr-only">Kapşonlu</span></a>
+      <a class="hotspot toy-link" href="#pelus-oyuncak" aria-label="Pelüş Oyuncak"><span class="sr-only">Pelüş Oyuncak</span></a>
 
-<section class="hero">
-<div class="heroText"><h1>CODE-MAN'A<br>HOŞ GELDİN!</h1><p>Özel ürünler, eğlenceli koleksiyonlar ve Code-Man tarzı.</p><button class="heroBtn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Alışverişe Başla</button></div>
-<div class="heroVisual">CODE-MAN</div>
-</section>
-<div class="ribbon"><span>☆</span> %100 ORİJİNAL CODE-MAN ÜRÜNLERİ <span>☆</span> YENİ ÜRÜNLER GERİ DÖNDÜ <span>☆</span></div>
-<div class="notice">♡ &nbsp; SELAM! ÜRÜNLERİMİZİ KEŞFET VE SEPETİNE EKLE</div>
-
-<section class="section" id="products">
-<div class="head"><h2>Öne Çıkan Ürünler</h2><a href="#all">Tümünü Gör</a></div>
-<div class="grid" id="featured"></div>
-</section>
-
-<section class="section">
-<div class="head"><h2>Koleksiyonlar</h2></div>
-<div class="collection">
-<div class="col">TİŞÖRTLER<br><small style="font-size:14px;font-weight:500">Tarzını yansıt</small></div>
-<div class="col">KAPŞONLULAR<br><small style="font-size:14px;font-weight:500">Rahatlığını seç</small></div>
-<div class="col">PELŞU OYUNCAKLAR<br><small style="font-size:14px;font-weight:500">Eğlenceyi keşfet</small></div>
-</div>
-</section>
-
-<section class="section" id="all">
-<div class="head"><h2>Tüm Ürünler</h2></div><div class="grid" id="allGrid"></div>
-</section>
-
-<footer class="footer"><h2>CODE-MAN STORE</h2><p>Demo mağaza • Gerçek ödeme sistemi daha sonra eklenebilir.</p></footer>
-
-<aside class="cart" id="cart"><div class="cartHead"><h2>Sepetim</h2><button onclick="toggleCart()">×</button></div><div class="items" id="items"></div><div class="total"><span>Toplam</span><span id="total">0 TL</span></div><button class="checkout" onclick="alert('Demo mağaza: ödeme sistemi henüz bağlı değil.')">Ödemeye Geç</button></aside>
-
-<script>
-const products=[
-["Code-Man Evreni Tişört",639,"shirt","CM"],["Code-Man Kart 10'lu",219,"cards","★"],["Code-Man Kart 50'li",599,"cards","★"],["Code-Man Özel Güç Ekibi",639,"shirt","CM"],["Code-Man Kapşonlu",899,"hoodie","CM"],["Code-Man Peluş",499,"plush","🧸"],["Code-Man Siyah Tişört",639,"shirt","CM"],["Code-Man Mavi Hoodie",899,"hoodie","CM"]];
-let cart=[];
-function make(p,i){return `<div class="card"><div class="pic"><div class="${p[2]}">${p[3]}</div></div><h3>${p[0]}</h3><div class="price">${p[1]}.00 TL</div><button style="margin-top:12px;width:100%;padding:11px;border:0;border-radius:12px;background:#111936;color:white;font-weight:800;cursor:pointer" onclick="add(${i})">Sepete Ekle</button></div>`}
-featured.innerHTML=products.slice(0,4).map((p,i)=>make(p,i)).join("");
-allGrid.innerHTML=products.map((p,i)=>make(p,i)).join("");
-function add(i){let x=cart.find(a=>a.i===i);if(x)x.q++;else cart.push({i,q:1});render();toggleCart(true)}
-function render(){count.textContent=cart.reduce((a,x)=>a+x.q,0);items.innerHTML=cart.length?cart.map(x=>`<div class="item"><b>${products[x.i][0]}</b><br>${products[x.i][1]} TL × ${x.q}</div>`).join(""):"<p>Sepetin boş.</p>";total.textContent=cart.reduce((a,x)=>a+products[x.i][1]*x.q,0).toFixed(2)+" TL"}
-function toggleCart(force){if(force)cartEl.classList.add("open");else cartEl.classList.toggle("open")}
-const cartEl=document.getElementById("cart");render();
-</script>
+      <a class="hotspot category-clothing" id="kıyafet" href="#kıyafet" aria-label="Kıyafet kategorisi"><span class="sr-only">Kıyafet kategorisi</span></a>
+      <a class="hotspot category-hoodie" id="kapsonlu" href="#kapsonlu" aria-label="Kapşonlu kategorisi"><span class="sr-only">Kapşonlu kategorisi</span></a>
+      <a class="hotspot category-toy" id="pelus-oyuncak" href="#pelus-oyuncak" aria-label="Pelüş Oyuncak kategorisi"><span class="sr-only">Pelüş Oyuncak kategorisi</span></a>
+    </section>
+  </main>
 </body>
 </html>
